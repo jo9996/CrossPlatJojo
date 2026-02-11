@@ -1,12 +1,12 @@
-import { Image, ScrollView, StyleSheet, Text, View, ImageSourcePropType } from "react-native";
+import { Image, ImageSourcePropType, ScrollView, StyleSheet, Text, View } from "react-native";
 
-interface Operator {
+interface Waifu {
   name: string;
   subclass: string;
   image: ImageSourcePropType;
 }
 
-const OPERATORS: Operator[] = [
+const WAIFU: Waifu[] = [
   { name: "Skyfire", subclass: "Splash Caster", image: require('../assets/images/skfire.png') },
   { name: "Lin", subclass: "Phalanx Caster", image: require('../assets/images/lin.png') },
   { name: "Muelsyse", subclass: "Tactician Vanguard", image: require('../assets/images/mlyss.png') },
@@ -17,7 +17,7 @@ export default function Index() {
   return (
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContent}>
-        {OPERATORS.map((op, index) => (
+        {WAIFU.map((op, index) => (
           <View key={index} style={styles.itemContainer}>
             <Image source={op.image} style={styles.image} />
             <Text style={styles.text}>{op.name}</Text>
